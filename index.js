@@ -63,12 +63,8 @@ const init = async () => {
     const savingPath = join(process.cwd(), `cat-card-${+new Date()}.jpg`);
     console.log('file saving path:', savingPath);
 
-    try {
-      await writeFile(savingPath, data);
-      console.log('file saved');
-    } catch (error) {
-      console.log(error.message);
-    }
+    await writeFile(savingPath, data);
+    console.log('file saved');
   } catch (error) {
     console.log('Something went wrong:', error.message);
   }
